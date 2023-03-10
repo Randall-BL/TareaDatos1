@@ -9,7 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
+/**
+ *
+ * @author YITANR
+ */
 public class PersonCalculator extends Application {
     
     private Person[] people = new Person[4];
@@ -22,19 +25,19 @@ public class PersonCalculator extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Calculadora de Personas");
 
-        // Create the grid pane
+        // Creando el GridPane
         GridPane grid = new GridPane();
         grid.setPadding(new Insets(10, 10, 10, 10));
         grid.setVgap(5);
         grid.setHgap(5);
 
-        // Create the name label and text field
+        // Creando el label y text field
         Label nameLabel = new Label("Nombre:");
         grid.add(nameLabel, 0, 0);
         TextField nameTextField = new TextField();
         grid.add(nameTextField, 1, 0);
 
-        // Create the province label and combo box
+        // Creando el label de provincia y el combobox
         Label provinceLabel = new Label("Provincia:");
         grid.add(provinceLabel, 0, 1);
         ComboBox<String> provinceComboBox = new ComboBox<>();
@@ -49,13 +52,13 @@ public class PersonCalculator extends Application {
         );
         grid.add(provinceComboBox, 1, 1);
 
-        // Create the age label and text field
+        // Creando el label de Edad y el TextField
         Label ageLabel = new Label("Edad:");
         grid.add(ageLabel, 0, 2);
         TextField ageTextField = new TextField();
         grid.add(ageTextField, 1, 2);
 
-        // Create the add person button
+        // Creando el boton de añadir persona
         Button addButton = new Button("Añadir persona");
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -78,19 +81,19 @@ public class PersonCalculator extends Application {
         });
         grid.add(addButton, 0, 3);
 
-        // Create the person 1 label and combo box
+        //Creando el label de persona1 y el comboBox
         Label person1Label = new Label("Persona 1:");
         grid.add(person1Label, 0, 4);
         person1Combo = new ComboBox<>();
         grid.add(person1Combo, 1, 4);
 
-        // Create the person 2 label and combo box
+        // Creando el label de persona2 y el comboBox
         Label person2Label = new Label("Persona 2:");
         grid.add(person2Label, 0, 5);
         person2Combo = new ComboBox<>();
         grid.add(person2Combo, 1, 5);
 
-        // Create the operation label and combo box
+        // Creando el label de operacion y el combobox
         Label operationLabel = new Label("Operacion:");
         grid.add(operationLabel, 0, 6);
         operationCombo = new ComboBox<>();
@@ -102,7 +105,7 @@ public class PersonCalculator extends Application {
     );
     grid.add(operationCombo, 1, 6);
 
-    // Create the calculate button
+    // Creando el boton para calcular la operacion
     Button calculateButton = new Button("Calcular");
     calculateButton.setOnAction(new EventHandler<ActionEvent>() {
         @Override
@@ -120,13 +123,13 @@ public class PersonCalculator extends Application {
     });
     grid.add(calculateButton, 0, 7);
 
-    // Create the result label
+    // Creando el label de resultado
     Label resultTitleLabel = new Label("Resultado:");
     grid.add(resultTitleLabel, 0, 8);
     resultLabel = new Label();
     grid.add(resultLabel, 1, 8);
 
-    // Set the scene
+    // Colocando la escena
     Scene scene = new Scene(grid, 400, 300);
     primaryStage.setScene(scene);
     primaryStage.show();
